@@ -35,7 +35,7 @@ import fs from "node:fs";
 import path from "node:path";
 import type { GuidelineFull } from "./guidelines-loader";
 
-const REPO_ROOT = path.resolve(process.cwd(), "..");
+const REPO_ROOT = process.cwd();
 const TEMPLATES_DIR = path.join(REPO_ROOT, "templates");
 // Public web root for the copied derivatives + the URL prefix they serve from.
 const PUBLIC_SHOWCASE_DIR = path.join(process.cwd(), "public", "showcase");

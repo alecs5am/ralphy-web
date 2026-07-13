@@ -14,10 +14,8 @@ import type { LibraryEntry, LibraryKind } from "./library-types";
 export type { LibraryEntry, LibraryKind, LibraryCta, LibraryCover } from "./library-types";
 export { KIND_LABELS, KIND_GROUPS } from "./library-types";
 
-// process.cwd() is the `landing/` dir under both `next build` and `next dev`.
-// __dirname is unreliable under turbopack (it bundles server code into
-// `.next/...`), so resolve relative to cwd instead.
-const REPO_ROOT = path.resolve(process.cwd(), "..");
+// Public guideline snapshots live at the standalone web repository root.
+const REPO_ROOT = process.cwd();
 const GUIDELINES_DIR = path.join(REPO_ROOT, "guidelines");
 const ASSET_BASE = "/assets/guidelines";
 

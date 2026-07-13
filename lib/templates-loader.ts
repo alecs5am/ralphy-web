@@ -11,12 +11,8 @@
 import fs from "node:fs";
 import path from "node:path";
 
-// process.cwd() is the `landing/` dir under both `next build` and `next dev`.
-// __dirname is unreliable under turbopack (it bundles server code into
-// `.next/...`, so `../..` no longer points at the repo root and every template
-// silently disappears in the production build) — resolve relative to cwd, the
-// same pattern guidelines-loader.ts / skills-loader.ts use.
-const REPO_ROOT = path.resolve(process.cwd(), "..");
+// Public template snapshots live at the standalone web repository root.
+const REPO_ROOT = process.cwd();
 const TEMPLATES_DIR = path.join(REPO_ROOT, "templates");
 
 export type TemplateKind = "vibe-style" | "vibe-reference" | "unknown";

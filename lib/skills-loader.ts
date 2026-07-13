@@ -11,8 +11,8 @@
 import fs from "node:fs";
 import path from "node:path";
 
-// process.cwd() is the `landing/` dir under both `next build` and `next dev`.
-const REPO_ROOT = path.resolve(process.cwd(), "..");
+// Public skill snapshots live at the standalone web repository root.
+const REPO_ROOT = process.cwd();
 const SKILLS_DIR = path.join(REPO_ROOT, ".agents", "skills");
 const REPO_BLOB = "https://github.com/alecs5am/ralphy/blob/main/.agents/skills";
 // Pre-built icon tiles (see landing/scripts/build-skill-icons.py).

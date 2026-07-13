@@ -2,10 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  outputFileTracingRoot: process.cwd(),
   eslint: {
-    // landing has no local ESLint config; without this, `next build` walks up
-    // and applies the repo-root `@remotion/eslint-config-flat` rules to landing
-    // components, which is wrong (this is a Next.js app, not a Remotion video).
+    // This app has no local ESLint config. TypeScript remains part of the build.
     ignoreDuringBuilds: true,
   },
   async redirects() {

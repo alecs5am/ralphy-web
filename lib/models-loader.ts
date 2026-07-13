@@ -12,10 +12,8 @@
 import fs from "node:fs";
 import path from "node:path";
 
-// process.cwd() is the `landing/` dir under both `next build` and `next dev`.
-// __dirname is unreliable under turbopack (it bundles server code), so we
-// resolve relative to cwd (mirrors guidelines-loader / blog-shared).
-const REPO_ROOT = path.resolve(process.cwd(), "..");
+// The public model registry is a committed snapshot at the standalone web root.
+const REPO_ROOT = process.cwd();
 const MODELS_PATH = path.join(REPO_ROOT, "MODELS.md");
 
 export interface ModelsDoc {

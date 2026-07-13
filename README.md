@@ -1,11 +1,11 @@
-# Ralphy landing — Next.js 15 + TypeScript
+# Ralphy Web
 
-A single-page landing for Ralphy, built with the **App Router**, **TypeScript**, and plain CSS, served via Bun + Turbopack.
+The Ralphy website, public content library, and library publishing scripts. It
+is built with the Next.js App Router, TypeScript, and plain CSS.
 
 ## Local dev
 
 ```bash
-cd landing
 bun install
 bun run dev          # http://localhost:4173
 ```
@@ -20,7 +20,7 @@ bun run start
 ## Layout
 
 ```
-landing/
+ralphy-web/
   app/
     layout.tsx       — metadata, brand-icon preloads, root accent var
     page.tsx         — section composition
@@ -63,3 +63,10 @@ landing/
 - Gallery clips (label, title, span, ratio) — `lib/data.tsx` (`clips`)
 - Accent color (used by `--vio` CSS var) — `app/layout.tsx` (`style={{ "--vio": ... }}`)
 - Brand tokens, font faces — `app/globals.css`
+
+## Repository boundary
+
+The site owns committed public snapshots of the model registry, templates,
+guidelines, and agent skills that it renders. It must not import source files
+from a sibling `ralphy` checkout. CLI and agent runtime changes belong in
+[alecs5am/ralphy](https://github.com/alecs5am/ralphy).
